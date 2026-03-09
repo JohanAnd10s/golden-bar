@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Golden Bar y Boliranas</title>
+<link rel="stylesheet" href="css/styles.css">
+<link "https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+    <h1 class="logo">GOLDEN BAR</h1>
+    <nav>
+        <a href="#eventos">Eventos</a>
+        <a href="#catalogo">Carta</a>
+        <a href="#reservas">Reservar</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <div class="overlay"></div>
+    <div class="hero-content fade-in">
+        <h2>Donde la rumba y la bolirana se vuelven leyenda</h2>
+        <button onclick="scrollToReservas()">RESERVAR MESA</button>
+    </div>
+</section>
+
+<section class="carrusel fade-in">
+    <div class="slider">
+        <img src="img1.jpg" class="slide active">
+        <img src="img2.jpg" class="slide">
+        <video class="slide" muted loop>
+            <source src="video.mp4" type="video/mp4">
+        </video>
+    </div>
+</section>
+
+<section id="eventos" class="eventos fade-in">
+    <h2>Eventos de la Semana</h2>
+    <div class="evento-card">🎯 Jueves de Bolirana</div>
+    <div class="evento-card">🎧 Viernes DJ Invitado</div>
+    <div class="evento-card">🍹 Sábado 2x1 en Cocteles</div>
+</section>
+
+<section id="catalogo" class="catalogo fade-in">
+    <h2>Carta y Promociones</h2>
+    <div class="card">Ron Viejo de Caldas - $70.000</div>
+    <div class="card">Combo Golden - $120.000</div>
+    <div class="card">Promo 2x1 Cocteles</div>
+</section>
+
+<section id="reservas" class="reservas fade-in">
+    <h2>Reserva tu Mesa</h2>
+    <input type="text" id="nombre" placeholder="Tu nombre">
+    <input type="number" id="personas" placeholder="Número de personas">
+    <input type="date" id="fecha">
+    <input type="time" id="hora">
+    <button onclick="reservar()">Reservar por WhatsApp</button>
+</section>
+
+<footer>
+    <p>© 2026 Golden Bar y Boliranas</p>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
