@@ -128,7 +128,7 @@ box-shadow:0 0 20px gold;
 .cards{
 
 display:flex;
-gap:20px;
+gap:13px;
 flex-wrap:wrap;
 justify-content:center;
 
@@ -137,7 +137,7 @@ justify-content:center;
 .card{
 
 background:#141414;
-padding:25px;
+padding:20px;
 border-radius:12px;
 transition:.4s;
 
