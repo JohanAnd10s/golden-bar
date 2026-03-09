@@ -57,10 +57,18 @@ color:white;
 
 #hero{
 
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
 text-align:center;
-padding:100px 20px;
 
-}
+background:linear-gradient(
+rgba(0,0,0,0.7),
+rgba(0,0,0,0.9)
+);
+
 
 #hero h2{
 
@@ -282,5 +290,17 @@ flex-direction:column;
 justify-content:center;
 align-items:center;
 padding:40px;
+
+}
+section h2{
+
+font-size:40px;
+color:gold;
+margin-bottom:30px;
+
+  }
+html{
+
+scroll-behavior:smooth;
 
 }
