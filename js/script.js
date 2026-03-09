@@ -1,32 +1,52 @@
-// carrusel automático
+// CARRUSEL AUTOMATICO
 
+let slides = document.querySelectorAll(".slide")
 let index = 0
-
-const slides = document.querySelector(".slides")
-
-function moveCarousel(){
-
-index++
-
-if(index > slides.children.length - 1){
-index = 0
-}
-
-slides.scrollTo({
-left: index * 320,
-behavior: "smooth"
-})
-
-}
-
-setInterval(moveCarousel,4000)
-
-
-// luces discoteca
 
 setInterval(()=>{
 
-document.body.style.backgroundColor =
-`rgb(0,0,${Math.floor(Math.random()*40)})`
+slides[index].classList.remove("active")
 
-},1500)
+index = (index + 1) % slides.length
+
+slides[index].classList.add("active")
+
+if(slides[index].tagName === "VIDEO"){
+slides[index].play()
+}
+
+},4000)
+
+
+
+// SCROLL RESERVAS
+
+function scrollToReservas(){
+
+document
+.getElementById("reservas")
+.scrollIntoView({behavior:"smooth"})
+
+}
+
+
+
+// RESERVA WHATSAPP
+
+function reservar(){
+
+let nombre = document.getElementById("nombre").value
+let personas = document.getElementById("personas").value
+let fecha = document.getElementById("fecha").value
+let hora = document.getElementById("hora").value
+
+let mensaje =
+`Hola, soy ${nombre}.
+Quiero reservar mesa para ${personas} personas
+el día ${fecha} a las ${hora} en Golden Bar`
+
+let telefono="573000000000"
+
+window.open(`https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`)
+
+}
