@@ -50,3 +50,30 @@ let telefono = "573000000000";
 window.open(`https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`);
 
 }
+// CONTADOR TORNEO
+
+let torneo = new Date("2026-03-20 20:00").getTime();
+
+let x = setInterval(function(){
+
+let ahora = new Date().getTime();
+
+let distancia = torneo - ahora;
+
+let dias = Math.floor(distancia/(1000*60*60*24));
+
+let horas = Math.floor((distancia%(1000*60*60*24))/(1000*60*60));
+
+let minutos = Math.floor((distancia%(1000*60*60))/(1000*60));
+
+let segundos = Math.floor((distancia%(1000*60))/1000);
+
+let contador = document.getElementById("countdown");
+
+if(contador){
+
+contador.innerHTML = dias+"d "+horas+"h "+minutos+"m "+segundos+"s";
+
+}
+
+},1000);
