@@ -1,118 +1,137 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Bar Discoteca</title>
+<title>Golden Bar y Boliranas</title>
 
 <link rel="stylesheet" href="css/styles.css">
 
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;800&display=swap" rel="stylesheet">
+
 </head>
 
+
 <body>
-<div class="disco-lights">
-
-<div class="light light1"></div>
-<div class="light light2"></div>
-<div class="light light3"></div>
-<div class="light light4"></div>
-
-</div>
-<div class="particles"></div>
 
 <header>
 
-<div class="logo-container">
-<img src="images/logo.png" class="logo">
-<h1>BAR DISCOTECA</h1>
-</div>
+<h1 class="logo">GOLDEN BAR</h1>
 
 <nav>
-<a href="#galeria">Galería</a>
-<a href="#carta">Carta</a>
+<a href="#hero">Inicio</a>
+<a href="#carrusel">Galería</a>
+<a href="#eventos">Eventos</a>
+<a href="#catalogo">Carta</a>
 <a href="#reservas">Reservas</a>
 </nav>
 
 </header>
 
-<section id="hero">
 
-<h2>La mejor rumba de la ciudad</h2>
-<p>Torneos de bolirana • Eventos deportivos • Música • Tragos</p>
+<main class="scroll-container">
+
+
+<section id="hero" class="section hero">
+
+<div class="overlay"></div>
+
+<div class="content">
+
+<h2>Donde la rumba y la bolirana se vuelven leyenda</h2>
+
+<button onclick="scrollToReservas()">Reservar Mesa</button>
+
+</div>
 
 </section>
 
 
-<section id="galeria">
 
-<h2>Ambiente</h2>
+<section id="carrusel" class="section carrusel">
 
-<div class="carousel">
+<h2>Ambiente del Bar</h2>
 
-<div class="slides">
+<div class="slider">
 
-<img src="images/foto1.jpg">
-<img src="images/foto2.jpg">
-<img src="images/foto3.jpg">
+<img src="img1.jpg" class="slide active">
 
-<video controls>
-<source src="videos/video1.mp4" type="video/mp4">
+<img src="img2.jpg" class="slide">
+
+<video class="slide" muted loop>
+
+<source src="video.mp4">
+
 </video>
 
 </div>
 
+</section>
+
+
+
+<section id="eventos" class="section eventos">
+
+<h2>Eventos de la Semana</h2>
+
+<div class="cards">
+
+<div class="evento-card">🎯 Jueves de Bolirana</div>
+
+<div class="evento-card">🎧 Viernes DJ Invitado</div>
+
+<div class="evento-card">🍹 Sábado 2x1 Cocteles</div>
+
 </div>
 
 </section>
 
 
-<section id="carta">
 
-<h2>Nuestra Carta</h2>
+<section id="catalogo" class="section catalogo">
 
-<img src="images/carta.jpg" class="menu">
+<h2>Carta y Promociones</h2>
+
+<div class="cards">
+
+<div class="card">Ron Viejo de Caldas - $70.000</div>
+
+<div class="card">Combo Golden - $120.000</div>
+
+<div class="card">Promo 2x1 Cocteles</div>
+
+</div>
+
+</section>
+
+
+
+<section id="reservas" class="section reservas">
+
+<h2>Reserva tu Mesa</h2>
+
+<input type="text" id="nombre" placeholder="Tu nombre">
+
+<input type="number" id="personas" placeholder="Número de personas">
+
+<input type="date" id="fecha">
+
+<input type="time" id="hora">
+
+<button onclick="reservar()">Reservar por WhatsApp</button>
 
 </section>
 
 
-<section id="reservas">
+</main>
 
-<h2>Reservas</h2>
 
-<form>
-
-<input type="text" placeholder="Nombre" required>
-
-<input type="tel" placeholder="Teléfono" required>
-
-<input type="date" required>
-
-<textarea placeholder="Mensaje"></textarea>
-
-<button type="submit">Reservar</button>
-
-</form>
-
-</section>
-
-<section id="ubicacion">
-
-<h2>Ubicación</h2>
-
-<iframe
-src="https://www.google.com/maps?q=Bogota&output=embed"
-width="100%"
-height="400"
-style="border:0;"
-allowfullscreen=""
-loading="lazy">
-</iframe>
-
-</section>
 <footer>
 
-<p>© 2026 Bar Discoteca</p>
+<p>© 2026 Golden Bar y Boliranas</p>
 
 </footer>
 
@@ -120,4 +139,5 @@ loading="lazy">
 <script src="js/script.js"></script>
 
 </body>
+
 </html>
