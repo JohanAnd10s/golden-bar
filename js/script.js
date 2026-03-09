@@ -1,98 +1,32 @@
-// MENU MOVIL
+// carrusel automático
 
-const menuToggle = document.querySelector(".menu-toggle");
-const nav = document.querySelector(".nav");
+let index = 0
 
-menuToggle.addEventListener("click",()=>{
-nav.style.display = nav.style.display === "flex" ? "none" : "flex";
-});
+const slides = document.querySelector(".slides")
 
+function moveCarousel(){
 
+index++
 
-// SCROLL RESERVAS
+if(index > slides.children.length - 1){
+index = 0
+}
 
-function scrollToReservas(){
-
-document
-.getElementById("reservas")
-.scrollIntoView({behavior:"smooth"});
+slides.scrollTo({
+left: index * 320,
+behavior: "smooth"
+})
 
 }
 
+setInterval(moveCarousel,4000)
 
 
-// RESERVAS WHATSAPP
+// luces discoteca
 
-function reservar(){
+setInterval(()=>{
 
-let nombre = document.getElementById("nombre").value;
-let personas = document.getElementById("personas").value;
-let fecha = document.getElementById("fecha").value;
-let hora = document.getElementById("hora").value;
+document.body.style.backgroundColor =
+`rgb(0,0,${Math.floor(Math.random()*40)})`
 
-if(!nombre || !personas || !fecha || !hora){
-
-alert("Completa todos los campos");
-
-return;
-
-}
-
-let mensaje = `Hola! Soy ${nombre}.
-Quiero reservar mesa en Golden Bar.
-
-Personas: ${personas}
-Fecha: ${fecha}
-Hora: ${hora}`;
-
-let telefono = "573000000000";
-
-window.open(`https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`);
-
-}
-// CONTADOR TORNEO
-
-let torneo = new Date("2026-03-20 20:00").getTime();
-
-let x = setInterval(function(){
-
-let ahora = new Date().getTime();
-
-let distancia = torneo - ahora;
-
-let dias = Math.floor(distancia/(1000*60*60*24));
-
-let horas = Math.floor((distancia%(1000*60*60*24))/(1000*60*60));
-
-let minutos = Math.floor((distancia%(1000*60*60))/(1000*60));
-
-let segundos = Math.floor((distancia%(1000*60))/1000);
-
-let contador = document.getElementById("countdown");
-
-if(contador){
-
-contador.innerHTML = dias+"d "+horas+"h "+minutos+"m "+segundos+"s";
-
-}
-
-},1000);
-// ANIMACION SCROLL
-
-const elementos = document.querySelectorAll(".card");
-
-window.addEventListener("scroll",()=>{
-
-elementos.forEach(el=>{
-
-let top = el.getBoundingClientRect().top;
-
-if(top < window.innerHeight-100){
-
-el.classList.add("show");
-
-}
-
-});
-
-});
+},1500)
