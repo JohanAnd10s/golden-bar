@@ -77,3 +77,22 @@ contador.innerHTML = dias+"d "+horas+"h "+minutos+"m "+segundos+"s";
 }
 
 },1000);
+// ANIMACION SCROLL
+
+const elementos = document.querySelectorAll(".card");
+
+window.addEventListener("scroll",()=>{
+
+elementos.forEach(el=>{
+
+let top = el.getBoundingClientRect().top;
+
+if(top < window.innerHeight-100){
+
+el.classList.add("show");
+
+}
+
+});
+
+});
