@@ -186,23 +186,34 @@ border:none;
 border-radius:6px;
 
 }
+/* CONTENEDOR LOGO */
+
 .logo-container{
 
 display:flex;
 align-items:center;
-gap:10px;
+gap:12px;
 
 }
 
-.logo-container img{
 
-height:40px;
+/* IMAGEN LOGO */
+
+.logo-img{
+
+height:60px;
+width:auto;
 
 }
 
-.logo-container span{
 
-color:gold;
+/* TEXTO LOGO */
+
+.logo-text{
+
+font-size:1.4rem;
 font-weight:800;
+color:gold;
+letter-spacing:2px;
 
 }
