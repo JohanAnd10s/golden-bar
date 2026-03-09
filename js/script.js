@@ -59,7 +59,6 @@ document
 }
 
 
-
 // WHATSAPP
 
 function reservar(){
