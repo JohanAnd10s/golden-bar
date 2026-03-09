@@ -186,3 +186,23 @@ border:none;
 border-radius:6px;
 
 }
+.logo-container{
+
+display:flex;
+align-items:center;
+gap:10px;
+
+}
+
+.logo-container img{
+
+height:40px;
+
+}
+
+.logo-container span{
+
+color:gold;
+font-weight:800;
+
+}
