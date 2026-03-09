@@ -223,3 +223,32 @@ text-shadow:
 }
 
   }
+.insta{
+
+padding:80px 20px;
+text-align:center;
+
+}
+
+.insta-grid{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:10px;
+
+}
+
+.insta-grid img{
+
+width:100%;
+border-radius:8px;
+transition:.4s;
+
+}
+
+.insta-grid img:hover{
+
+transform:scale(1.05);
+box-shadow:0 0 15px gold;
+
+}
