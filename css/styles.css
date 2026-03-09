@@ -1,61 +1,63 @@
 body{
-
 margin:0;
-font-family:Arial;
-background:#000;
+font-family:'Poppins',sans-serif;
+background:#0a0a0a;
 color:white;
 overflow-x:hidden;
-
+scroll-behavior:smooth;
 }
-
 
 /* HEADER */
 
 header{
 
+position:fixed;
+top:0;
+width:100%;
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:20px;
-background:rgba(0,0,0,0.7);
-position:sticky;
-top:0;
+padding:20px 40px;
+background:rgba(0,0,0,0.8);
+z-index:1000;
 
 }
 
 .logo{
 
-width:60px;
-
-}
-
-.logo-container{
-
-display:flex;
-align-items:center;
-gap:10px;
+color:gold;
+font-weight:800;
+text-shadow:0 0 10px gold;
 
 }
 
 nav a{
 
-color:gold;
+color:white;
 margin-left:20px;
 text-decoration:none;
-font-weight:bold;
+transition:0.3s;
 
 }
 
 nav a:hover{
 
-color:white;
+color:gold;
 
 }
 
 
-/* HERO */
+/* SCROLL FULL PAGE */
 
-#hero{
+.scroll-container{
+
+scroll-snap-type:y mandatory;
+overflow-y:scroll;
+height:100vh;
+
+}
+
+.section{
 
 height:100vh;
 display:flex;
@@ -63,139 +65,128 @@ flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
-
-background:linear-gradient(
-rgba(0,0,0,0.7),
-rgba(0,0,0,0.9)
-);
-
-
-#hero h2{
-
-font-size:40px;
-color:gold;
+scroll-snap-align:start;
+padding:20px;
 
 }
 
 
-/* GALERIA */
+/* HERO */
 
-#galeria{
+.hero{
 
-padding:60px 20px;
-text-align:center;
-
-}
-
-.carousel{
-
-overflow:hidden;
-max-width:900px;
-margin:auto;
+background:url('fondo.jpg') center/cover no-repeat;
+position:relative;
 
 }
 
-.slides{
+.overlay{
+
+position:absolute;
+width:100%;
+height:100%;
+background:linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.95));
+
+}
+
+.content{
+
+position:relative;
+
+}
+
+.hero h2{
+
+font-size:3rem;
+
+}
+
+
+/* BOTONES */
+
+button{
+
+padding:15px 30px;
+background:gold;
+border:none;
+border-radius:6px;
+cursor:pointer;
+font-weight:bold;
+transition:0.3s;
+
+}
+
+button:hover{
+
+transform:scale(1.1);
+box-shadow:0 0 20px gold;
+
+}
+
+
+/* CARRUSEL */
+
+.slider{
+
+width:80%;
+max-width:800px;
+
+}
+
+.slide{
+
+display:none;
+width:100%;
+border-radius:15px;
+
+}
+
+.active{
+
+display:block;
+
+}
+
+
+/* CARDS */
+
+.cards{
 
 display:flex;
 gap:20px;
-overflow-x:auto;
+flex-wrap:wrap;
+justify-content:center;
 
 }
 
-.slides img,
-.slides video{
+.evento-card,
+.card{
 
-width:300px;
+background:#141414;
+padding:20px;
 border-radius:10px;
+transition:0.4s;
 
 }
 
+.evento-card:hover,
+.card:hover{
 
-/* CARTA */
-
-#carta{
-
-text-align:center;
-padding:60px 20px;
-
-}
-
-.menu{
-
-max-width:500px;
-width:100%;
-border-radius:10px;
+box-shadow:0 0 25px gold;
+transform:translateY(-10px);
 
 }
 
 
 /* RESERVAS */
 
-#reservas{
+.reservas input{
 
-padding:60px 20px;
-text-align:center;
-
-}
-
-form{
-
-max-width:400px;
-margin:auto;
-display:flex;
-flex-direction:column;
-gap:10px;
-
-}
-
-input,
-textarea{
-
+display:block;
+margin:10px;
 padding:10px;
 border:none;
 border-radius:5px;
-
-}
-
-button{
-
-background:gold;
-border:none;
-padding:10px;
-font-weight:bold;
-cursor:pointer;
-
-}
-
-button:hover{
-
-background:white;
-
-}
-
-
-/* PARTICULAS */
-
-.particles{
-
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background-image:radial-gradient(gold 1px, transparent 1px);
-background-size:40px 40px;
-animation:moveParticles 20s linear infinite;
-opacity:0.2;
-pointer-events:none;
-
-}
-
-@keyframes moveParticles{
-
-from{transform:translateY(0)}
-to{transform:translateY(-200px)}
 
 }
 
@@ -204,103 +195,12 @@ to{transform:translateY(-200px)}
 
 @media(max-width:768px){
 
-header{
+.hero h2{
+font-size:1.8rem;
+}
 
+.cards{
 flex-direction:column;
-gap:10px;
-
 }
-
-#hero h2{
-
-font-size:28px;
-
-}
-
-}
-#ubicacion{
-
-padding:60px 20px;
-text-align:center;
-
-}
-
-#ubicacion iframe{
-
-border-radius:10px;
-
-}
-#ubicacion{
-
-padding:60px 20px;
-text-align:center;
-
-}
-
-#ubicacion iframe{
-
-border-radius:10px;
-
-}
-.disco-lights{
-
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-pointer-events:none;
-z-index:-1;
-
-}
-
-.light{
-
-position:absolute;
-width:300px;
-height:300px;
-border-radius:50%;
-filter:blur(120px);
-opacity:0.4;
-animation:moveLight 6s infinite alternate;
-
-}
-
-.light1{background:red}
-.light2{background:blue}
-.light3{background:purple}
-.light4{background:gold}
-
-@keyframes moveLight{
-
-from{
-transform:translate(0,0)
-}
-
-to{
-transform:translate(300px,200px)
-}
-
-}
-section{
-
-min-height:100vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-padding:40px;
-
-}
-section h2{
-
-font-size:40px;
-color:gold;
-margin-bottom:30px;
-
-  }
-html{
-
-scroll-behavior:smooth;
 
 }
