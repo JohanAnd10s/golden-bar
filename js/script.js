@@ -78,3 +78,11 @@ let telefono="573000000000"
 window.open(`https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`)
 
 }
+const menuBtn = document.getElementById("menu-btn")
+const nav = document.getElementById("nav")
+
+menuBtn.addEventListener("click",()=>{
+
+nav.classList.toggle("active")
+
+})
