@@ -217,3 +217,18 @@ color:gold;
 letter-spacing:2px;
 
 }
+@media (max-width:768px){
+
+.logo-img{
+
+height:45px;
+
+}
+
+.logo-text{
+
+font-size:1.1rem;
+
+}
+
+}
