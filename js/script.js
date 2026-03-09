@@ -1,51 +1,29 @@
-// CARRUSEL AUTOMÁTICO (IMÁGENES Y VIDEO)
+// MENU MOVIL
 
-const slides = document.querySelectorAll(".slide");
-let index = 0;
+const menuToggle = document.querySelector(".menu-toggle");
+const nav = document.querySelector(".nav");
 
-function cambiarSlide() {
-
-slides[index].classList.remove("active");
-
-// si es video lo pausamos
-if (slides[index].tagName === "VIDEO") {
-slides[index].pause();
-}
-
-index++;
-
-if (index >= slides.length) {
-index = 0;
-}
-
-slides[index].classList.add("active");
-
-// si el slide es video lo reproducimos
-if (slides[index].tagName === "VIDEO") {
-slides[index].play();
-}
-
-}
-
-setInterval(cambiarSlide, 5000);
+menuToggle.addEventListener("click",()=>{
+nav.style.display = nav.style.display === "flex" ? "none" : "flex";
+});
 
 
 
-/* SCROLL SUAVE A RESERVAS */
+// SCROLL RESERVAS
 
-function scrollToReservas() {
+function scrollToReservas(){
 
 document
 .getElementById("reservas")
-.scrollIntoView({ behavior: "smooth" });
+.scrollIntoView({behavior:"smooth"});
 
 }
 
 
 
-/* RESERVA POR WHATSAPP */
+// RESERVAS WHATSAPP
 
-function reservar() {
+function reservar(){
 
 let nombre = document.getElementById("nombre").value;
 let personas = document.getElementById("personas").value;
@@ -54,7 +32,7 @@ let hora = document.getElementById("hora").value;
 
 if(!nombre || !personas || !fecha || !hora){
 
-alert("Por favor completa todos los campos");
+alert("Completa todos los campos");
 
 return;
 
@@ -67,37 +45,8 @@ Personas: ${personas}
 Fecha: ${fecha}
 Hora: ${hora}`;
 
-let telefono = "573000000000"; // cambia por tu numero real
+let telefono = "573000000000";
 
-let url = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
-
-window.open(url, "_blank");
+window.open(`https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`);
 
 }
-
-
-
-/* ANIMACIÓN AL HACER SCROLL */
-
-const faders = document.querySelectorAll(".fade-in");
-
-function mostrarElementos(){
-
-const triggerBottom = window.innerHeight * 0.85;
-
-faders.forEach(el => {
-
-const top = el.getBoundingClientRect().top;
-
-if(top < triggerBottom){
-
-el.classList.add("show");
-
-}
-
-});
-
-}
-
-window.addEventListener("scroll", mostrarElementos);
-mostrarElementos();
