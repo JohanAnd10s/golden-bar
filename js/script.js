@@ -79,11 +79,9 @@ window.open(`https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`)
 
 }
 
-const menuBtn = document.getElementById("menu-btn")
-const nav = document.getElementById("nav")
+const menuBtn = document.getElementById("menu-btn");
+const nav = document.getElementById("nav");
 
-menuBtn.addEventListener("click",()=>{
-
-nav.classList.toggle("active")
-
-})
+menuBtn.addEventListener("click", function () {
+    nav.classList.toggle("active");
+});
