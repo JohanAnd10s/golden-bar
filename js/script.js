@@ -1,4 +1,31 @@
-// CARRUSEL AUTOMATICO
+// SCROLL ANIMACION APPLE
+
+const panels = document.querySelectorAll(".panel")
+
+const observer = new IntersectionObserver(entries => {
+
+entries.forEach(entry => {
+
+if(entry.isIntersecting){
+
+entry.target.classList.add("show")
+
+}
+
+})
+
+},{
+threshold:.4
+})
+
+panels.forEach(panel=>{
+observer.observe(panel)
+})
+
+
+
+
+// CARRUSEL
 
 let slides = document.querySelectorAll(".slide")
 let index = 0
@@ -11,8 +38,10 @@ index = (index + 1) % slides.length
 
 slides[index].classList.add("active")
 
-if(slides[index].tagName === "VIDEO"){
+if(slides[index].tagName==="VIDEO"){
+
 slides[index].play()
+
 }
 
 },4000)
@@ -31,17 +60,16 @@ document
 
 
 
-// RESERVA WHATSAPP
+// WHATSAPP
 
 function reservar(){
 
-let nombre = document.getElementById("nombre").value
-let personas = document.getElementById("personas").value
-let fecha = document.getElementById("fecha").value
-let hora = document.getElementById("hora").value
+let nombre=document.getElementById("nombre").value
+let personas=document.getElementById("personas").value
+let fecha=document.getElementById("fecha").value
+let hora=document.getElementById("hora").value
 
-let mensaje =
-`Hola, soy ${nombre}.
+let mensaje=`Hola soy ${nombre}.
 Quiero reservar mesa para ${personas} personas
 el día ${fecha} a las ${hora} en Golden Bar`
 
