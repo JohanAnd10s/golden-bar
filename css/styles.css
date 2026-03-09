@@ -1,11 +1,13 @@
 body{
+
 margin:0;
 font-family:'Poppins',sans-serif;
 background:#0a0a0a;
 color:white;
-overflow-x:hidden;
-scroll-behavior:smooth;
+overflow:hidden;
+
 }
+
 
 /* HEADER */
 
@@ -36,7 +38,7 @@ nav a{
 color:white;
 margin-left:20px;
 text-decoration:none;
-transition:0.3s;
+transition:.3s;
 
 }
 
@@ -47,26 +49,38 @@ color:gold;
 }
 
 
-/* SCROLL FULL PAGE */
+/* SCROLL APPLE */
 
 .scroll-container{
 
-scroll-snap-type:y mandatory;
-overflow-y:scroll;
 height:100vh;
+overflow-y:scroll;
+scroll-snap-type:y mandatory;
+scroll-behavior:smooth;
 
 }
 
-.section{
+.panel{
 
 height:100vh;
+scroll-snap-align:start;
 display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
-scroll-snap-align:start;
-padding:20px;
+padding:40px;
+
+opacity:0;
+transform:scale(.9);
+transition:1s;
+
+}
+
+.panel.show{
+
+opacity:1;
+transform:scale(1);
 
 }
 
@@ -76,33 +90,18 @@ padding:20px;
 .hero{
 
 background:url('fondo.jpg') center/cover no-repeat;
-position:relative;
-
-}
-
-.overlay{
-
-position:absolute;
-width:100%;
-height:100%;
-background:linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.95));
-
-}
-
-.content{
-
-position:relative;
 
 }
 
 .hero h2{
 
 font-size:3rem;
+max-width:700px;
 
 }
 
 
-/* BOTONES */
+/* BOTON */
 
 button{
 
@@ -112,7 +111,7 @@ border:none;
 border-radius:6px;
 cursor:pointer;
 font-weight:bold;
-transition:0.3s;
+transition:.3s;
 
 }
 
@@ -120,6 +119,34 @@ button:hover{
 
 transform:scale(1.1);
 box-shadow:0 0 20px gold;
+
+}
+
+
+/* CARDS */
+
+.cards{
+
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+justify-content:center;
+
+}
+
+.card{
+
+background:#141414;
+padding:25px;
+border-radius:12px;
+transition:.4s;
+
+}
+
+.card:hover{
+
+box-shadow:0 0 25px gold;
+transform:translateY(-10px);
 
 }
 
@@ -148,36 +175,6 @@ display:block;
 }
 
 
-/* CARDS */
-
-.cards{
-
-display:flex;
-gap:20px;
-flex-wrap:wrap;
-justify-content:center;
-
-}
-
-.evento-card,
-.card{
-
-background:#141414;
-padding:20px;
-border-radius:10px;
-transition:0.4s;
-
-}
-
-.evento-card:hover,
-.card:hover{
-
-box-shadow:0 0 25px gold;
-transform:translateY(-10px);
-
-}
-
-
 /* RESERVAS */
 
 .reservas input{
@@ -186,21 +183,6 @@ display:block;
 margin:10px;
 padding:10px;
 border:none;
-border-radius:5px;
-
-}
-
-
-/* RESPONSIVE */
-
-@media(max-width:768px){
-
-.hero h2{
-font-size:1.8rem;
-}
-
-.cards{
-flex-direction:column;
-}
+border-radius:6px;
 
 }
