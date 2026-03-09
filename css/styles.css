@@ -209,4 +209,16 @@ font-size:28px;
 
 }
 
-}ñ
+}
+#ubicacion{
+
+padding:60px 20px;
+text-align:center;
+
+}
+
+#ubicacion iframe{
+
+border-radius:10px;
+
+}
