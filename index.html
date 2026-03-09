@@ -1,73 +1,56 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Golden Bar y Boliranas</title>
+<title>Bar Discoteca</title>
 
 <link rel="stylesheet" href="css/styles.css">
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;800&display=swap" rel="stylesheet">
 
 </head>
 
 <body>
 
-<header class="header">
+<div class="particles"></div>
+
+<header>
 
 <div class="logo-container">
 <img src="images/logo.png" class="logo">
+<h1>BAR DISCOTECA</h1>
 </div>
 
-<nav class="nav">
-
+<nav>
 <a href="#galeria">Galería</a>
-<a href="#eventos">Eventos</a>
-<a href="#torneos">Boliranas</a>
 <a href="#carta">Carta</a>
 <a href="#reservas">Reservas</a>
-
 </nav>
-
-<div class="menu-toggle">☰</div>
 
 </header>
 
+<section id="hero">
 
-<section class="hero">
-
-<div class="overlay"></div>
-
-<div class="hero-content">
-
-<h1>Golden Bar y Boliranas</h1>
-<p>Rumba, Boliranas y Eventos Deportivos</p>
-
-<button onclick="scrollToReservas()">Reservar Mesa</button>
-
-</div>
+<h2>La mejor rumba de la ciudad</h2>
+<p>Torneos de bolirana • Eventos deportivos • Música • Tragos</p>
 
 </section>
 
 
-<section id="galeria" class="galeria">
+<section id="galeria">
 
-<h2>Ambiente Golden</h2>
+<h2>Ambiente</h2>
 
-<div class="slider">
+<div class="carousel">
 
 <div class="slides">
 
 <img src="images/foto1.jpg">
-
 <img src="images/foto2.jpg">
+<img src="images/foto3.jpg">
 
-<video muted loop>
-
-<source src="images/video.mp4">
-
+<video controls>
+<source src="videos/video1.mp4" type="video/mp4">
 </video>
 
 </div>
@@ -75,111 +58,44 @@
 </div>
 
 </section>
-  <section class="insta">
-
-<h2>Galería del Bar</h2>
-
-<div class="insta-grid">
-
-<img src="images/foto1.jpg">
-<img src="images/foto2.jpg">
-<img src="images/foto1.jpg">
-<img src="images/foto2.jpg">
-<img src="images/foto1.jpg">
-<img src="images/foto2.jpg">
-
-</div>
-
-  </section>
 
 
-<section id="eventos" class="eventos">
-
-<h2>Eventos Deportivos</h2>
-
-<div class="grid">
-
-<div class="card">
-⚽ Mundial De Futbol
-</div>
-
-<div class="card">
-🏆 Liga Colombiana
-</div>
-
-</div>
-
-</section>
-
-
-<section id="torneos" class="torneos">
-
-<h2>Torneos de Bolirana</h2>
-  
-<div class="contador">
-
-<h3>Próximo torneo inicia en:</h3>
-
-<div id="countdown"></div>
-
-</div>
-<div class="grid">
-
-<div class="card">
-🎯 Torneo semanal
-</div>
-
-<div class="card">
-🏆 Premios y retos
-</div>
-
-<div class="card">
-🍻 Competencias entre mesas
-</div>
-
-</div>
-
-</section>
-
-
-<section id="carta" class="carta">
+<section id="carta">
 
 <h2>Nuestra Carta</h2>
 
-<img src="images/carta.jpg" class="menu-img">
+<img src="images/carta.jpg" class="menu">
 
 </section>
 
 
-<section id="reservas" class="reservas">
+<section id="reservas">
 
-<h2>Reserva tu Mesa</h2>
+<h2>Reservas</h2>
 
-<div class="form">
+<form>
 
-<input type="text" id="nombre" placeholder="Nombre">
+<input type="text" placeholder="Nombre" required>
 
-<input type="number" id="personas" placeholder="Personas">
+<input type="tel" placeholder="Teléfono" required>
 
-<input type="date" id="fecha">
+<input type="date" required>
 
-<input type="time" id="hora">
+<textarea placeholder="Mensaje"></textarea>
 
-<button onclick="reservar()">Reservar por WhatsApp</button>
+<button type="submit">Reservar</button>
 
-</div>
+</form>
 
 </section>
-
-
-<a href="https://wa.me/573000000000" class="whatsapp">💬</a>
 
 
 <footer>
 
-<p>© 2026 Golden Bar y Boliranas</p>
+<p>© 2026 Bar Discoteca</p>
 
 </footer>
+
 
 <script src="js/script.js"></script>
 
