@@ -1,396 +1,107 @@
-body{
+// SCROLL ANIMACION APPLE
 
-margin:0;
-font-family:'Poppins',sans-serif;
-background:#0a0a0a;
-color:white;
-overflow:hidden;
+const panels = document.querySelectorAll(".panel")
 
-}
-/* HEADER */
+const observer = new IntersectionObserver(entries => {
 
-header{
+entries.forEach(entry => {
 
-position:fixed;
-top:0;
-width:100%;
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:20px 40px;
-background:rgba(0,0,0,0.8);
-z-index:1000;
+if(entry.isIntersecting){
+
+entry.target.classList.add("show")
 
 }
 
-.logo{
+})
 
-color:gold;
-font-weight:800;
-text-shadow:0 0 10px gold;
+},{
+threshold:.4
+})
 
-}
-
-nav a{
-
-color:white;
-margin-left:20px;
-text-decoration:none;
-transition:.3s;
-
-}
-
-nav a:hover{
-
-color:gold;
-
-}
+panels.forEach(panel=>{
+observer.observe(panel)
+})
 
 
-/* SCROLL APPLE */
 
-.scroll-container{
 
-height:100vh;
-overflow-y:scroll;
-scroll-snap-type:y mandatory;
-scroll-behavior:smooth;
+// CARRUSEL
+
+let slides = document.querySelectorAll(".slide")
+let index = 0
+
+setInterval(()=>{
+
+slides[index].classList.remove("active")
+
+index = (index + 1) % slides.length
+
+slides[index].classList.add("active")
+
+if(slides[index].tagName==="VIDEO"){
+
+slides[index].play()
 
 }
 
-.panel{
+},4000)
 
-height:100vh;
-scroll-snap-align:start;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-padding:40px;
 
-opacity:0;
-transform:scale(.9);
-transition:1s;
 
-}
+// SCROLL RESERVAS
 
-.panel.show{
+function scrollToReservas(){
 
-opacity:1;
-transform:scale(1);
+document
+.getElementById("reservas")
+.scrollIntoView({behavior:"smooth"})
 
 }
 
 
-/* HERO */
+// WHATSAPP
 
-.hero{
+function reservar(){
 
-background:url('fondo.jpg') center/cover no-repeat;
+let nombre=document.getElementById("nombre").value
+let personas=document.getElementById("personas").value
+let fecha=document.getElementById("fecha").value
+let hora=document.getElementById("hora").value
 
-}
+let mensaje = `Hola soy ${nombre}. 
+Quiero reservar mesa para ${personas} personas 
+el día ${fecha} a las ${hora} en Golden Bar y Boliranas`;
+let telefono="573045717964"
 
-.hero h2{
-
-font-size:3rem;
-max-width:700px;
-
-}
-
-
-/* BOTON */
-
-button{
-
-padding:15px 30px;
-background:gold;
-border:none;
-border-radius:6px;
-cursor:pointer;
-font-weight:bold;
-transition:.3s;
+window.open(`https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`)
 
 }
 
-button:hover{
-
-transform:scale(1.1);
-box-shadow:0 0 20px gold;
-
-}
-
-
-/* CARDS */
-
-.cards{
-
-display:flex;
-gap:20px;
-flex-wrap:wrap;
-justify-content:center;
-
-}
-
-.card{
-
-background:#141414;
-padding:25px;
-border-radius:12px;
-transition:.4s;
-
-}
-
-.card:hover{
-
-box-shadow:0 0 25px gold;
-transform:translateY(-10px);
-
-}
-
-
-/* CARRUSEL */
-
-.slider{
-
-width:80%;
-max-width:800px;
-
-}
-
-.slide{
-
-display:none;
-width:100%;
-border-radius:15px;
-
-}
-
-.active{
-
-display:block;
-
-}
-
-
-/* RESERVAS */
-
-.reservas input{
-
-display:block;
-margin:10px;
-padding:10px;
-border:none;
-border-radius:6px;
-
-}
-/* CONTENEDOR LOGO */
-
-.logo-container{
-
-display:flex;
-align-items:center;
-gap:12px;
-
-}
-
-
-/* IMAGEN LOGO */
-
-.logo-img{
-
-height:60px;
-width:auto;
-
-}
-
-
-/* TEXTO LOGO */
-
-.logo-text{
-
-font-size:1.4rem;
-font-weight:800;
-color:gold;
-letter-spacing:2px;
-
-}
-@media (max-width:768px){
-
-.logo-img{
-
-height:45px;
-
-}
-
-.logo-text{
-
-font-size:1.1rem;
-
-}
-}
-.menu-grid{
-
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-width:80%;
-max-width:1000px;
-margin-top:30px;
-
-}
-
-.menu-img{
-
-width:100%;
-border-radius:12px;
-box-shadow:0 0 20px rgba(255,215,0,0.4);
-transition:.4s;
-
-}
-
-.menu-img:hover{
-
-transform:scale(1.05);
-box-shadow:0 0 25px gold;
-
-}
-/* BOTON HAMBURGUESA */
-
-.menu-btn{
-z-index:1000;
-}
-
-.menu-btn span{
-
-width:25px;
-height:3px;
-background:white;
-transition:.3s;
-
-}
-
-// MENU HAMBURGUESA
 document.addEventListener("DOMContentLoaded", function(){
 
 const menuBtn = document.getElementById("menu-btn");
 const nav = document.getElementById("nav");
 
-menuBtn.addEventListener("click", function(){
-nav.classList.toggle("active");
+if(menuBtn && nav){
+    menuBtn.addEventListener("click", function(){
+        nav.classList.toggle("active");
+    });
+}
+
 });
+// GALERIA LIGHTBOX
 
-});
-/* NAV */
+const imagenes=document.querySelectorAll(".galeria-item")
+const lightbox=document.getElementById("lightbox")
+const lightboxImg=document.getElementById("lightbox-img")
 
-nav{
+imagenes.forEach(img=>{
+img.addEventListener("click",()=>{
+lightbox.style.display="flex"
+lightboxImg.src=img.src
+})
+})
 
-display:flex;
-align-items:center;
-
-}
-
-
-/* MOBILE */
-
-@media(max-width:768px){
-
-.menu-btn{
-display:flex;
-}
-
-nav{
-
-position:fixed;
-top:0;
-right:-100%;
-height:100vh;
-width:250px;
-background:#0a0a0a;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-gap:30px;
-transition:.4s;
-
-}
-
-nav.active{
-
-right:0;
-
-}
-
-nav a{
-
-font-size:1.4rem;
-
-}
-
-/* GALERIA */
-/* GALERIA HORIZONTAL */
-
-.galeria{
-height:100vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-padding:40px;
-}
-
-.titulo-seccion{
-font-size:32px;
-margin-bottom:40px;
-color:gold;
-letter-spacing:4px;
-}
-
-.galeria-scroll{
-display:flex;
-gap:20px;
-overflow-x:auto;
-scroll-snap-type:x mandatory;
-width:100%;
-max-width:1200px;
-padding-bottom:10px;
-}
-
-.galeria-scroll::-webkit-scrollbar{
-display:none;
-}
-
-.galeria-item{
-flex:0 0 auto;
-width:300px;
-height:400px;
-object-fit:cover;
-border-radius:12px;
-scroll-snap-align:center;
-cursor:pointer;
-transition:transform .4s, box-shadow .4s;
-}
-
-.galeria-item:hover{
-transform:scale(1.05);
-box-shadow:0 0 20px gold;
-}
-
-#lightbox{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.9);
-display:none;
-align-items:center;
-justify-content:center;
-z-index:999;
-}
-
-#lightbox img{
-max-width:90%;
-max-height:90%;
-border-radius:10px;
-}
+lightbox.addEventListener("click",()=>{
+lightbox.style.display="none"
+})
