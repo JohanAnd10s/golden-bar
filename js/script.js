@@ -91,7 +91,7 @@ if(menuBtn && nav){
 });
 // GALERIA LIGHTBOX
 
-const imagenes=document.querySelectorAll(".galeria-item")
+const imagenes = document.querySelectorAll(".galeria-scroll img")
 const lightbox=document.getElementById("lightbox")
 const lightboxImg=document.getElementById("lightbox-img")
 
