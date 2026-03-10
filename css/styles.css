@@ -343,14 +343,7 @@ justify-content:flex-start;
 padding:80px 20px;
 overflow:hidden;
   }
-.galeria{
-height:100vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-padding:40px;
-}
+
 
 .titulo-seccion{
 font-size:32px;
