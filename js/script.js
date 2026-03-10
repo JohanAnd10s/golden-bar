@@ -28,7 +28,6 @@ observer.observe(panel)
 // CARRUSEL
 
 
-
 slides[index].classList.add("active")
 
 // SCROLL RESERVAS
