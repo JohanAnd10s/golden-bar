@@ -228,7 +228,7 @@ height:45px;
 font-size:1.1rem;
 
 }
-
+}
 .menu-grid{
 
 display:grid;
@@ -253,7 +253,7 @@ transition:.4s;
 
 transform:scale(1.05);
 box-shadow:0 0 25px gold;
-}
+
 }
 /* BOTON HAMBURGUESA */
 
@@ -322,7 +322,7 @@ font-size:1.4rem;
 .galeria-item video{
 pointer-events:none;
 }
-
+/*  
 .galeria{
 height:100vh;
 display:flex;
@@ -331,6 +331,7 @@ justify-content:center;
 align-items:center;
 padding:40px;
 }
+*/
 
 .titulo-seccion{
 font-size:32px;
@@ -338,8 +339,8 @@ margin-bottom:40px;
 color:gold;
 letter-spacing:4px;
 }
-
-.galeria-scroll{
+/*. } */
+/*.galeria-scroll{
 display:flex;
 gap:20px;
 overflow-x:auto;
@@ -347,12 +348,12 @@ scroll-snap-type:x mandatory;
 width:100%;
 max-width:1200px;
 padding-bottom:10px;
-}
+}*/
 
 .galeria-scroll::-webkit-scrollbar{
 display:none;
 }
-}
+
 .galeria-item{
 flex:0 0 auto;
 width:300px;
@@ -428,7 +429,7 @@ z-index:999;
 max-width:90%;
 max-height:90%;
 border-radius:10px;
-
+}
 }
 .galeria{
 height:100vh;
