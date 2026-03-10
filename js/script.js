@@ -78,7 +78,6 @@ window.open(`https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`)
 
 }
 document.addEventListener("DOMContentLoaded", function(){
-
 const menuBtn = document.getElementById("menu-btn");
 const nav = document.getElementById("nav");
 
