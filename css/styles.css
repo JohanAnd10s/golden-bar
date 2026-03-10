@@ -334,7 +334,15 @@ padding-right:10px;
 .galeria-grid{
 max-height:70vh;
 }
-  
+.galeria{
+height:100vh;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:flex-start;
+padding:80px 20px;
+overflow:hidden;
+  }
 .galeria{
 height:100vh;
 display:flex;
