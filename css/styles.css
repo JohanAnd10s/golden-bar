@@ -352,7 +352,7 @@ padding-bottom:10px;
 .galeria-scroll::-webkit-scrollbar{
 display:none;
 }
-/*
+
 .galeria-item{
 flex:0 0 auto;
 width:300px;
@@ -363,7 +363,7 @@ scroll-snap-align:center;
 cursor:pointer;
 transition:transform .4s, box-shadow .4s;
 }
-*/
+
 .galeria-item{
 flex:0 0 auto;
 width:280px;
