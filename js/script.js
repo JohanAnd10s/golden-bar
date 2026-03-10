@@ -27,24 +27,7 @@ observer.observe(panel)
 
 // CARRUSEL
 
-let slides = document.querySelectorAll(".slide")
-let index = 0
 
-setInterval(()=>{
-
-slides[index].classList.remove("active")
-
-index = (index + 1) % slides.length
-
-slides[index].classList.add("active")
-
-if(slides[index].tagName==="VIDEO"){
-
-slides[index].play()
-
-}
-
-},4000)
 
 slides[index].classList.add("active")
 
