@@ -445,7 +445,7 @@ height:480px;
 }
 
 }
-/*ancho secciones*/
+/*ancho secciones
 @media (min-width:1024px){
 
 .panel{
@@ -454,6 +454,7 @@ padding-right:8vw;
 }
 
 }
+*/
 /*Galeria modo Escritorio*/
 @media (min-width:1024px){
 
