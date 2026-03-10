@@ -7,7 +7,6 @@ color:white;
 overflow:hidden;
 
 }
-
 /* HEADER */
 
 header{
