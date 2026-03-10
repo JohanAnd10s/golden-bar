@@ -68,10 +68,9 @@ let personas=document.getElementById("personas").value
 let fecha=document.getElementById("fecha").value
 let hora=document.getElementById("hora").value
 
-let mensaje=`Hola soy ${nombre}.
-Quiero reservar mesa para ${personas} personas
-el día ${fecha} a las ${hora} en Golden Bar y Bolirana`
-
+let mensaje = `Hola soy ${nombre}. 
+Quiero reservar mesa para ${personas} personas 
+el día ${fecha} a las ${hora} en Golden Bar y Boliranas`;
 let telefono="573045717964"
 
 window.open(`https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`)
