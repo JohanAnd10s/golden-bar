@@ -323,11 +323,13 @@ font-size:1.4rem;
 /* GALERIA */
 
 .galeria{
+height:100vh;
 display:flex;
 flex-direction:column;
 align-items:center;
-justify-content:center;
-padding:40px;
+justify-content:flex-start;
+padding:80px 20px;
+overflow:hidden;
 }
 
 .titulo-seccion{
