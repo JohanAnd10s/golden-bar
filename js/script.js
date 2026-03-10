@@ -89,3 +89,19 @@ if(menuBtn && nav){
 }
 
 });
+// GALERIA LIGHTBOX
+
+const imagenes=document.querySelectorAll(".galeria-item")
+const lightbox=document.getElementById("lightbox")
+const lightboxImg=document.getElementById("lightbox-img")
+
+imagenes.forEach(img=>{
+img.addEventListener("click",()=>{
+lightbox.style.display="flex"
+lightboxImg.src=img.src
+})
+})
+
+lightbox.addEventListener("click",()=>{
+lightbox.style.display="none"
+})
