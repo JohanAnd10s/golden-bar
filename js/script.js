@@ -77,7 +77,9 @@ let telefono="573045717964"
 window.open(`https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`)
 
 }
+
 document.addEventListener("DOMContentLoaded", function(){
+
 const menuBtn = document.getElementById("menu-btn");
 const nav = document.getElementById("nav");
 
