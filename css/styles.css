@@ -319,7 +319,10 @@ font-size:1.4rem;
 
 /* GALERIA */
 /* GALERIA HORIZONTAL */
-
+.galeria-item video{
+pointer-events:none;
+}
+  
 .galeria{
 height:100vh;
 display:flex;
