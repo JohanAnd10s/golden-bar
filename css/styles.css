@@ -151,7 +151,13 @@ transform:translateY(-10px);
 
 
 /* CARRUSEL */
+.carrusel video{
 
+width:100%;
+height:100%;
+object-fit:cover;
+
+}
 .slider{
 
 width:80%;
