@@ -229,7 +229,7 @@ height:45px;
 font-size:1.1rem;
 
 }
-}
+
 .menu-grid{
 
 display:grid;
@@ -254,7 +254,7 @@ transition:.4s;
 
 transform:scale(1.05);
 box-shadow:0 0 25px gold;
-
+}
 }
 /* BOTON HAMBURGUESA */
 
