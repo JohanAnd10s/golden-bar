@@ -46,7 +46,7 @@ slides[index].play()
 
 },4000)
 
-
+slides[index].classList.add("active")
 
 // SCROLL RESERVAS
 
