@@ -259,16 +259,9 @@ box-shadow:0 0 25px gold;
 
 }
 /* BOTON HAMBURGUESA */
+
 .menu-btn{
 z-index:1000;
-}
-.menu-btn{
-
-display:none;
-flex-direction:column;
-cursor:pointer;
-gap:5px;
-
 }
 
 .menu-btn span{
