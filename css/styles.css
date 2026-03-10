@@ -320,4 +320,41 @@ font-size:1.4rem;
 
 }
 
+/* GALERIA */
+
+.galeria{
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+padding:40px;
+}
+
+.titulo-seccion{
+font-size:32px;
+margin-bottom:40px;
+letter-spacing:4px;
+color:gold;
+}
+
+.galeria-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:15px;
+width:100%;
+max-width:1200px;
+}
+
+.galeria-item{
+width:100%;
+height:250px;
+object-fit:cover;
+border-radius:10px;
+cursor:pointer;
+transition:transform .4s, box-shadow .4s;
+}
+
+.galeria-item:hover{
+transform:scale(1.05);
+box-shadow:0 0 15px gold;
 }
