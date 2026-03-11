@@ -60,7 +60,7 @@ scroll-behavior:smooth;
 
 .panel{
 
-height: min-height:100vh;
+height:100vh;
 scroll-snap-align:start;
 display:flex;
 flex-direction:column;
@@ -238,22 +238,6 @@ width:80%;
 max-width:1000px;
 margin-top:30px;
 
-}
-.catalogo{
-min-height:100vh;
-display:flex;
-flex-direction:column;
-align-items:center;
-justify-content:center;
-overflow:hidden;
-}
-.menu-img img{
-width:100%;
-max-width:420px;
-height:auto;
-
-display:block;
-margin:auto;
 }
 
 .menu-img{
@@ -458,54 +442,6 @@ border-radius:10px;
 .galeria-item{
 width:300px;
 height:480px;
-}
-
-}
-/*ancho secciones*/
-@media (min-width:1024px){
-
-.panel{
-padding-left:8vw;
-padding-right:8vw;
-}
-
-}
-/*Galeria modo Escritorio*/
-@media (min-width:1024px){
-
-.galeria-scroll{
-max-width:1800px;
-}
-
-.galeria-item{
-width:420px;
-height:650px;
-}
-
-}
-/*Reservas modo Escritorio*/
-@media (min-width:1024px){
-
-.formulario{
-max-width:800px;
-width:100%;
-}
-
-input, textarea, select{
-font-size:1.2rem;
-padding:14px;
-}
-
-}
-@media (min-width:1024px){
-
-.panel{
-padding:60px 10vw;
-}
-
-.titulo-seccion{
-font-size:3rem;
-margin-bottom:40px;
 }
 
 }
